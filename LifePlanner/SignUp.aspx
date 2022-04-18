@@ -49,23 +49,23 @@
             <asp:Label ID="lbl" runat="server" Font-Size="25pt" Text="Sign Up To Your Life Planner"></asp:Label>
         </div>
         <p>
-            <asp:TextBox ID="txtFirstName" runat="server" BackColor="Silver" style="margin-left: 0px" Width="218px">Input First Name</asp:TextBox>
+            <asp:TextBox ID="txtFirstName" runat="server" BackColor="Silver" style="margin-left: 0px" Width="218px" placeholder = "Input first name"></asp:TextBox>
           </p>
         <div>
-            <asp:TextBox ID="txtLastName" runat="server" BackColor="Silver" Width="218px">Input Last Name</asp:TextBox>
+            <asp:TextBox ID="txtLastName" runat="server" BackColor="Silver" Width="218px" placeholder = "Input last name"></asp:TextBox>
             <br />
             <br />
         </div>
         <p>
-            <asp:TextBox ID="txtPhone" runat="server" BackColor="Silver" Width="218px">Phone Number</asp:TextBox>
+            <asp:TextBox ID="txtPhone" runat="server" BackColor="Silver" Width="218px" placeholder = "Input phone number"></asp:TextBox>
         </p>
           <p>
-              <asp:TextBox ID="txtEmail" runat="server" BackColor="Silver" Width="218px">Email</asp:TextBox>
+              <asp:TextBox ID="txtEmail" runat="server" BackColor="Silver" Width="218px" placeholder = "Input email"></asp:TextBox>
           </p>
         <p>
-            <asp:TextBox ID="txtUsername" runat="server" BackColor="Silver" Width="218px">Create Your Username</asp:TextBox>
+            <asp:TextBox ID="txtUsername" runat="server" BackColor="Silver" Width="218px" placeholder = "Input username"></asp:TextBox>
         </p>
-          <asp:TextBox ID="txtPassword" runat="server" BackColor="Silver" Width="218px">Create Your Password</asp:TextBox>
+          <asp:TextBox ID="txtPassword" runat="server" BackColor="Silver" Width="218px" placeholder = "Input password"></asp:TextBox>
           <br />
         <asp:Label ID="Label2" runat="server" Text="Already a member?"></asp:Label>
           &nbsp;<asp:Button ID="Button1" runat="server" BackColor="#0099CC" Text="Login" Width="78px" />
