@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<%--     <form id="form1" runat="server">--%>
+         <form runat="server">
+             <asp:Button ID="btnAboutUs" runat="server" ClientIDMode="Static" OnClick="Button1_Click" Text="About Us" />
+             <%--     <form id="form1" runat="server">--%>
      <nav class="navbar navbar-light navbar-expand-md border rounded" style="background: #D3E0EA;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Life Planner&nbsp;</a>
@@ -30,7 +32,6 @@
             </div>
         </div>
     </nav>
-         <form runat="server">
          <button class="btn btn-primary" type="button" style="background: transparent; color: rgb(0,0,0);" onclick="openForm()">
                                 <i class="fas fa-plus-square" style="color: #276678;"></i>
                                 Add Task ...
@@ -83,3 +84,4 @@
      <%--</form>--%>
 </body>
 </html>
+

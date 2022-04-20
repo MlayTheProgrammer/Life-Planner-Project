@@ -29,11 +29,11 @@
                               <a class="nav-link" href="#">Login</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Contact</a>
-                            </li>
+                              <a class="nav-link" href="#">Contact</a>&nbsp;</li>
                              <%-- <ul class="nav navbar-nav navbar-right">
                                  <li><a href="#"><img src="images/LifePlanner.png" class="img-responsive"/>Right</a></li>
                                </ul>--%>
+                              <asp:Button ID="btnContact" runat="server" Text="Contact" />
                           </ul>
                         </div>
                       </div>
@@ -436,7 +436,7 @@
 
     <div>
         <footer class="card-footer" style="background-color:#F6F5F5">
-            <p>&copy; <%: DateTime.Now.Year %> - Life Planner</p>
+            <p>&copy; <%: DateTime.Now.Year %>- Life Planner</p>
         </footer>
     </div>
     
