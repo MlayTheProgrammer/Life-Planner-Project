@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace group_project
+namespace LifePlanner
 {
 
 
