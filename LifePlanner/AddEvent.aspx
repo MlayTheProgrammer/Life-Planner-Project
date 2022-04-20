@@ -432,12 +432,13 @@
             </div>
 
         </div>
-    
-        <div>
-            <footer class="card-footer" style="background-color:#F6F5F5">
-                <p>&copy; <%: DateTime.Now.Year %> - Life Planner</p>
-            </footer>
-        </div>
     </div>
+
+    <div>
+        <footer class="card-footer" style="background-color:#F6F5F5">
+            <p>&copy; <%: DateTime.Now.Year %> - Life Planner</p>
+        </footer>
+    </div>
+    
 </body>
 </html>
