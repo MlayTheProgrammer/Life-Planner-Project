@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Tasks</title>
+    <title>Lists</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -48,35 +48,11 @@
                     <h1>Good Morning!</h1>
                 </div>
             </div>
-            <div class="container">
-                <div class="row" style="background: url('assets/images/op.png'); background-repeat: no-repeat; width: 100%; height: 100%;">
+            <div class="container" style="background: url('assets/images/opa.png'); width: 100%; height: 100%;">
+                <div class="row" style="background: url('assets/images/opa.png'); width: 100%; height: 100%;">
 
                     <div class="row" id="addingTasks">
                         <div class="col">
-                            <%--       <asp:LinkButton ID="AddTaskBtn"  runat="server" BackColor="Transparent" ForeColor="Black" CssClass="btn btn-primary" OnClick="AddTask">
-                            <i class="fas fa-plus-square" style="color: #276678;">
-                            </i>
-                            Add List ...
-                        </asp:LinkButton>--%>
-                            <%--     <button class="btn btn-primary" type="button" style="background: transparent;color: rgb(0,0,0);" onclick="openForm()">
-                            <i class="fas fa-plus-square" style="color: #276678;">
-                            </i>
-                            Add List ...
-                        </button>--%>
-                            <%-- <div class="form-popup" id="myForm" style="display: none">--%>
-                            <%--  <form class="form-container" runat="server">--%>
-                            <%-- <h1>Add List</h1>--%>
-
-                            <%--  <label for="name"><b>List Name</b></label>
-                            <input id="inputTitle" type="text" placeholder="Enter List Name" name="name" required>--%>
-                            <%-- <asp:TextBox ID="txtTitle" runat="server" BackColor="Silver" Width="218px" placeholder = "Enter List Name"></asp:TextBox>--%>
-                            <%--                            <button type="submit" class="btn">Add</button>--%>
-                            <%-- <asp:LinkButton ID="AddTaskBtn"  runat="server" BackColor="Transparent" OnClientClick="ListAdded()" ForeColor="Black" CssClass="btn btn-primary" OnClick="AddTask">
-                            Add
-                              </asp:LinkButton>
-                            <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>--%>
-                            <%--</form>--%>
-                            <%--</div>--%>
                         </div>
                     </div>
                     <asp:Panel ID="pnlList" runat="server">
@@ -102,28 +78,34 @@
                                 <button type="button" class="btn cancel" onclick="closeForm2()">Cancel</button>
                                 <asp:Label ID="lblListId" runat="server"></asp:Label>
                             </div>
-                          
-                            <asp:GridView ID="addingList" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" OnRowDataBound="gvList_RowDataBound" OnRowCommand="gvList_RowCommand">
-                                <Columns>
-                                    <asp:BoundField DataField="ListId" HeaderText="ID" />
-                                    <asp:BoundField DataField="Title" HeaderText="List Name" />
-                                    <asp:TemplateField HeaderText="Actions">
-                                        <ItemTemplate>
-                                            <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary" 
-                                                OnClientClick="return showEdit();" Text="Edit" CommandName="EditList" BackColor="#D3E0EA" BorderColor="#D3E0EA" />
-                                            <asp:Button ID="btnShow" runat="server" CssClass="btn btn-primary" Text="Show tasks" CommandName="ShowList" BackColor="#1687A7" BorderColor="#1687A7" />
-                                            <asp:Button ID="btnDelete" runat="server" CssClass="btn btn-danger"
-                                                OnClientClick="return confirm('Are you sure you want to delete this list?')" Text="Delete" CommandName="DeleteList" BackColor="#276678" BorderColor="#276678" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                            </asp:GridView>
+                            <div style="width: 600px; height: 500px;">
+                                <asp:GridView ID="addingList" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" OnRowDataBound="gvList_RowDataBound" OnRowCommand="gvList_RowCommand">
+                                    <Columns>
+                                        <asp:BoundField DataField="ListId" HeaderText="ID" />
+                                        <asp:BoundField DataField="Title" HeaderText="List Name" />
+                                        <asp:TemplateField HeaderText="Actions">
+                                            <ItemTemplate>
+                                                <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary"
+                                                    OnClientClick="return showEdit();" Text="Edit" CommandName="EditList" BackColor="#D3E0EA" BorderColor="#D3E0EA" />
+                                                <asp:Button ID="btnShow" runat="server" CssClass="btn btn-primary" Text="Show tasks" CommandName="ShowList" BackColor="#1687A7" BorderColor="#1687A7" />
+                                                <asp:Button ID="btnDelete" runat="server" CssClass="btn btn-danger"
+                                                    OnClientClick="return confirm('Are you sure you want to delete this list?')" Text="Delete" CommandName="DeleteList" BackColor="#276678" BorderColor="#276678" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
                         </form>
                     </asp:Panel>
                 </div>
+
             </div>
+            <footer style="background: #D3E0EA;">
+                <p>&copy;  - My Life Planner Application</p>
+            </footer>
         </div>
     </div>
+
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Sidebar-Menu.js"></script>
     <%--    </form>--%>
@@ -139,7 +121,7 @@
 
         function showEdit() {
             document.getElementById("editForm").style.display = "block";
-           // return false;
+            // return false;
         }
 
         function closeForm2() {

@@ -78,6 +78,7 @@ namespace LifePlanner
                 Button editButton = e.Row.FindControl("btnEdit") as Button;
                 Button deleteButton = e.Row.FindControl("btnDelete") as Button;
                 Button showButton = e.Row.FindControl("btnShow") as Button;
+                
 
                 editButton.CommandArgument = e.Row.Cells[0].Text; //taking the Id of the selected row
                 deleteButton.CommandArgument = e.Row.Cells[0].Text;
@@ -118,34 +119,38 @@ namespace LifePlanner
             }
             else if (e.CommandName == "ShowList") // the Show button was clicked
 			{
-                listId = int.Parse(e.CommandArgument.ToString());
-                using (SqlConnection conn = new SqlConnection())
-                {
-                    conn.ConnectionString = WebConfigurationManager.ConnectionStrings["LifePlanerConnectionString"].ConnectionString;
+                //HttpCookie listNum = new HttpCookie("ListId");
+                //listNum.Value = e.CommandArgument.ToString();
+                Console.WriteLine(e.CommandArgument.ToString());
+                Response.Redirect("ListTasks.aspx?Parameter=" + e.CommandArgument.ToString());
+                //listId = int.Parse(e.CommandArgument.ToString());
+                //using (SqlConnection conn = new SqlConnection())
+                //{
+                //    conn.ConnectionString = WebConfigurationManager.ConnectionStrings["LifePlanerConnectionString"].ConnectionString;
 
-                    // 2. Create a SqlCommand object
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "SELECT FROM Task WHERE ListId = " + listId;
-                    cmd.Connection = conn;
-                    SqlDataAdapter sda = new SqlDataAdapter();
-                    sda.SelectCommand = cmd;
+                //    // 2. Create a SqlCommand object
+                //    SqlCommand cmd = new SqlCommand();
+                //    cmd.CommandText = "SELECT FROM Task WHERE ListId = " + listId;
+                //    cmd.Connection = conn;
+                //    SqlDataAdapter sda = new SqlDataAdapter();
+                //    sda.SelectCommand = cmd;
 
-                    DataTable dt = new DataTable();
+                //    DataTable dt = new DataTable();
 
-                    conn.Open();
+                //    conn.Open();
 
-                    sda.Fill(dt);
+                //    sda.Fill(dt);
 
-                    //addingTask.DataSource = dt;
-                    //addingTask.DataBind();
-                    conn.Close();
+                //    //addingTask.DataSource = dt;
+                //    //addingTask.DataBind();
+                //    conn.Close();
 
                    // BindTaskList();
                 }
             }
 
 
-        }
+        
 
         private void EditListById(int listId)
         {
