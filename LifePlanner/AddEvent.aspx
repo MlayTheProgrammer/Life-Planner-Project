@@ -33,7 +33,7 @@
                              <%-- <ul class="nav navbar-nav navbar-right">
                                  <li><a href="#"><img src="images/LifePlanner.png" class="img-responsive"/>Right</a></li>
                                </ul>--%>
-                              <asp:Button ID="btnContact" runat="server" Text="Contact" />
+<%--<asp:Button ID="btnContact" runat="server" Text="Contact" /--%>
                           </ul>
                         </div>
                       </div>

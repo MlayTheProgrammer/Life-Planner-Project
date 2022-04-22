@@ -16,7 +16,6 @@
 </head>
 <body>
          <form runat="server">
-             <asp:Button ID="btnAboutUs" runat="server" ClientIDMode="Static" OnClick="Button1_Click" Text="About Us" />
              <%--     <form id="form1" runat="server">--%>
      <nav class="navbar navbar-light navbar-expand-md border rounded" style="background: #D3E0EA;">
         <div class="container-fluid">
@@ -27,15 +26,18 @@
             
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: #1687A7;">Help&nbsp;<i class="fa fa-question" style="color: #1687A7; font-size: 25px;"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: #1687A7;">Help</a></li>
+                    <li class="nav-item"></li>
+                    <li><a class="nav-link" href="#" style="color: #1687A7;"><i class="fa fa-question" style="color: #1687A7; font-size: 25px;">
+                        <asp:Button ID="btnAboutUs" runat="server" ClientIDMode="Static" OnClick="Button1_Click" Text="About Us" BackColor="#0099CC" Font-Size="14pt" ForeColor="White" Height="33px" Width="93px" />
+                        </i></a></li>
                 </ul>
             </div>
         </div>
     </nav>
          <button class="btn btn-primary" type="button" style="background: transparent; color: rgb(0,0,0);" onclick="openForm()">
                                 <i class="fas fa-plus-square" style="color: #276678;"></i>
-                                Add Task ...
-                            </button>
+                                Add Task ...</button>
                             <div class="form-popup" id="myForm" style="display: none">
                                 <h1>Add Task</h1>
                                 <asp:TextBox ID="txtTitle" runat="server" BackColor="Silver" Width="218px" placeholder="Enter Task Name"></asp:TextBox>
