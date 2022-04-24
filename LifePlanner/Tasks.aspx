@@ -59,7 +59,7 @@
         <div style="width: 80%; margin: 0 0 0 20%;">
             <div class="row">
                 <div class="col" style="margin: 5px;">
-                    <h1>Good Morning!</h1>
+                    <h1>Welcome back!</h1>
                 </div>
             </div>
             <div class="container">

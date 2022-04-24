@@ -68,7 +68,7 @@
      <asp:GridView ID="addingTask" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" OnRowDataBound="gvList_RowDataBound" OnSelectedIndexChanged="addingTask_SelectedIndexChanged" OnRowCommand="gvList_RowCommand">
                                 <Columns>
                                     <asp:BoundField DataField="TaskId" HeaderText="ID" />
-                                    <asp:BoundField DataField="Title" HeaderText="List Name" />
+                                    <asp:BoundField DataField="Title" HeaderText="Task Name" />
                                     <asp:BoundField DataField="Status" HeaderText="Status" />
                                     <asp:BoundField DataField="DueDate" HeaderText="Due date" />
                                     <asp:TemplateField HeaderText="Actions">
