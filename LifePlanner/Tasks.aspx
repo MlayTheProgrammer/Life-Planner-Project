@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+     <form runat="server">
     <%--    <form id="form1" runat="server">--%>
     <nav class="navbar navbar-light navbar-expand-md border rounded" style="background: #D3E0EA;">
         <div class="container-fluid">
@@ -36,8 +37,21 @@
         <div id="wrapper" style="width: 20%; padding: 0;">
             <div id="sidebar-wrapper" style="background: #D3E0EA; width: 20%;">
                 <ul class="sidebar-nav">
-                    <li><a href="#" style="color: var(--bs-dark); width: 200px;"><i class="fa fa-home" style="color: #1687A7;"></i>Dashboard</a></li>
-                    <li class="sidebar-brand"><a href="#" style="color: var(--bs-dark); text-decoration: underline; width: 200px;"><i class="fas fa-tasks" style="color: #1687A7;"></i>Tasks</a></li>
+                    <li>
+                         <i class="fa fa-home" style="color: #1687A7;"></i>
+                         <asp:Button ID="dashboard" runat="server" OnClick="get_dashboard" Text="Dashbaord" BackColor="Transparent" CssClass="btn btn-primary border rounded" ForeColor="#1687A7" />
+                       <%-- <a href="#" style="color: var(--bs-dark); width: 200px;">--%>
+                           
+                           <%-- Dashboard--%>
+                       <%-- </a>--%>
+                    </li>
+                    <li class="sidebar-brand">
+                       <%-- <a href="#" style="color: var(--bs-dark); text-decoration: underline; width: 200px;">--%>
+                            <i class="fas fa-tasks" style="color: #1687A7;"></i>
+                            <asp:Button ID="task" runat="server" OnClick="get_task" Text="Tasks" BackColor="Transparent" CssClass="btn btn-primary border rounded" ForeColor="#1687A7" Font-Underline="True" />
+                            <%--Tasks
+                        </a>--%>
+                    </li>
                     <li><a href="#" style="color: var(--bs-dark); width: 200px;"><i class="fas fa-user" style="color: #1687A7;"></i>Profile</a></li>
                 </ul>
             </div>
@@ -45,7 +59,7 @@
         <div style="width: 80%; margin: 0 0 0 20%;">
             <div class="row">
                 <div class="col" style="margin: 5px;">
-                    <h1>Good Morning!</h1>
+                    <h1>Welcome back!</h1>
                 </div>
             </div>
             <div class="container">
@@ -53,34 +67,11 @@
 
                     <div class="row" id="addingTasks">
                         <div class="col">
-                            <%--       <asp:LinkButton ID="AddTaskBtn"  runat="server" BackColor="Transparent" ForeColor="Black" CssClass="btn btn-primary" OnClick="AddTask">
-                            <i class="fas fa-plus-square" style="color: #276678;">
-                            </i>
-                            Add List ...
-                        </asp:LinkButton>--%>
-                            <%--     <button class="btn btn-primary" type="button" style="background: transparent;color: rgb(0,0,0);" onclick="openForm()">
-                            <i class="fas fa-plus-square" style="color: #276678;">
-                            </i>
-                            Add List ...
-                        </button>--%>
-                            <%-- <div class="form-popup" id="myForm" style="display: none">--%>
-                            <%--  <form class="form-container" runat="server">--%>
-                            <%-- <h1>Add List</h1>--%>
-
-                            <%--  <label for="name"><b>List Name</b></label>
-                            <input id="inputTitle" type="text" placeholder="Enter List Name" name="name" required>--%>
-                            <%-- <asp:TextBox ID="txtTitle" runat="server" BackColor="Silver" Width="218px" placeholder = "Enter List Name"></asp:TextBox>--%>
-                            <%--                            <button type="submit" class="btn">Add</button>--%>
-                            <%-- <asp:LinkButton ID="AddTaskBtn"  runat="server" BackColor="Transparent" OnClientClick="ListAdded()" ForeColor="Black" CssClass="btn btn-primary" OnClick="AddTask">
-                            Add
-                              </asp:LinkButton>
-                            <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>--%>
-                            <%--</form>--%>
-                            <%--</div>--%>
+                           
                         </div>
                     </div>
                     <asp:Panel ID="pnlList" runat="server">
-                        <form runat="server">
+                      <%--  <form runat="server">--%>
                             <button class="btn btn-primary" type="button" style="background: transparent; color: rgb(0,0,0);" onclick="openForm()">
                                 <i class="fas fa-plus-square" style="color: #276678;"></i>
                                 Add List ...
@@ -92,14 +83,16 @@
                             Add
                                 </asp:LinkButton>
                                 <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+                                
                             </div>
 
-                            <div class="form-popup" id="editForm" style="display: none">
+                            <div class="form-popup" id="editForm" runat="server" visible="false">
                                 <h1>Edit List Name</h1>
                                 <asp:TextBox ID="txtTitleEdit" runat="server" BackColor="Silver" Width="218px" placeholder="Enter new list name"></asp:TextBox>
-                                <asp:LinkButton ID="editTask" runat="server" BackColor="Transparent" OnClientClick="return closeForm2();" ForeColor="Black" CssClass="btn btn-primary" OnClick="btnSaveList_Click" Text="Edit">
+                                <asp:LinkButton ID="editTask" runat="server" BackColor="Transparent" ForeColor="Black" CssClass="btn btn-primary" OnClick="btnSaveList_Click" Text="Edit">
                                 </asp:LinkButton>
-                                <button type="button" class="btn cancel" onclick="closeForm2()">Cancel</button>
+                                <%--<button type="button" class="btn cancel" onclick="closeForm2()">Cancel</button>--%>
+                                <asp:Button ID="cancelTask" runat="server" Text="Cancel" CssClass="btn cancel" OnClick="cancelAddTask"/>
                                 <asp:Label ID="lblListId" runat="server"></asp:Label>
                             </div>
                           
@@ -110,7 +103,7 @@
                                     <asp:TemplateField HeaderText="Actions">
                                         <ItemTemplate>
                                             <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary" 
-                                                OnClientClick="return showEdit();" Text="Edit" CommandName="EditList" BackColor="#D3E0EA" BorderColor="#D3E0EA" />
+                                                 Text="Edit" CommandName="EditList" BackColor="#D3E0EA" BorderColor="#D3E0EA" OnClick="EditList" />
                                             <asp:Button ID="btnShow" runat="server" CssClass="btn btn-primary" Text="Show tasks" CommandName="ShowList" BackColor="#1687A7" BorderColor="#1687A7" />
                                             <asp:Button ID="btnDelete" runat="server" CssClass="btn btn-danger"
                                                 OnClientClick="return confirm('Are you sure you want to delete this list?')" Text="Delete" CommandName="DeleteList" BackColor="#276678" BorderColor="#276678" />
@@ -118,12 +111,13 @@
                                     </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
-                        </form>
+                        <%--</form>--%>
                     </asp:Panel>
                 </div>
             </div>
         </div>
     </div>
+         </form>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Sidebar-Menu.js"></script>
     <%--    </form>--%>

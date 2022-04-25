@@ -37,7 +37,6 @@ namespace LifePlanner
             conn.Open();
 
             sda.Fill(dt);
-
             addingTask.DataSource = dt;
             addingTask.DataBind();
             conn.Close();
@@ -49,23 +48,23 @@ namespace LifePlanner
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 Button editButton = e.Row.FindControl("btnEdit") as Button;
-                CheckBox cbDone = e.Row.FindControl("cbDone") as CheckBox;
+                //CheckBox cbDone = e.Row.FindControl("cbDone") as CheckBox;
                 Button deleteButton = e.Row.FindControl("btnDelete") as Button;
                 
                 editButton.CommandArgument = e.Row.Cells[0].Text; //taking the Id of the selected row
                 deleteButton.CommandArgument = e.Row.Cells[0].Text;
-                int status = 0;
+    //            int status = 0;
                 
-                if (cbDone.Checked)
-				{
-                    status = 1;
-				}
-				else
-				{
-                    status = 0;
-				}
-                HttpCookie checkedValue = new HttpCookie("checked");
-                checkedValue.Value = status.ToString();
+    //            if (cbDone.Checked)
+				//{
+    //                status = 1;
+				//}
+				//else
+				//{
+    //                status = 0;
+				//}
+    //            HttpCookie checkedValue = new HttpCookie("checked");
+    //            checkedValue.Value = status.ToString();
                 HttpCookie taskId = new HttpCookie("taskId");
                 taskId.Value = e.Row.Cells[0].Text;
 
@@ -81,8 +80,8 @@ namespace LifePlanner
             if (e.CommandName == "EditList") // the Edit button was clicked
             {
                 TaskId = int.Parse(e.CommandArgument.ToString());
-               // lblListId.Text = e.CommandArgument.ToString();
-                //EditListById(listId);
+                lblTaskId.Text = e.CommandArgument.ToString();
+                EditListById(TaskId);
 
 
             }
@@ -106,6 +105,38 @@ namespace LifePlanner
             }
            
         }
+
+        private void EditListById(int taskId)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = WebConfigurationManager.ConnectionStrings["LifePlanerConnectionString"].ConnectionString;
+
+            // 2. Create a SqlCommand object
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Task WHERE TaskId = " + taskId;
+            cmd.Connection = conn;
+            conn.Open();
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+
+            if (sdr.Read())
+            {
+                txtTitleEdit.Text = sdr["Title"].ToString();
+                CalendarEdit.SelectedDate= (DateTime)sdr["DueDate"];
+                string st = sdr["Status"].ToString();
+                if (st == 0.ToString())
+				{
+                    cbDone.Checked = false;
+                }
+				else
+				{
+                    cbDone.Checked = true;
+                }
+                
+            }
+
+        }
+
 
         protected void cbDone_CheckedChanged(object sender, EventArgs e)
 		{
@@ -165,16 +196,22 @@ namespace LifePlanner
                 cmd.ExecuteNonQuery();
                 //lblFeedback.Visible = true;
                 //lblFeedback.Text = "User added successfully";
-                 
+                myForm.Visible = false;
                 conn.Close();
                 BindTask();
             }
         }
 
-	
+        protected void Calendar_SelectionChanged(object sender, EventArgs e)
+        {
+            myForm.Visible = true;
+            string d = Calendar.SelectedDate.ToShortDateString();
+            //addDate(d);
+        }
 
-		protected void Calendar_SelectionChanged(object sender, EventArgs e)
+        protected void Calendar_SelectionChangedEdit(object sender, EventArgs e)
 		{
+           // myForm.Visible = true;
             string d = Calendar.SelectedDate.ToShortDateString();
             //addDate(d);
 		}
@@ -183,5 +220,72 @@ namespace LifePlanner
         {
             Response.Redirect("~/AboutUs.aspx");
         }
-    }
+
+		protected void AddTaskList(object sender, EventArgs e)
+		{
+            myForm.Visible = true;
+		}
+
+		protected void cancelAddTask(object sender, EventArgs e)
+		{
+            myForm.Visible = false;
+		}
+        protected void EditTask(object sender, EventArgs e)
+        {
+            editForm.Visible = true;
+        }
+
+		protected void cancelEditTask(object sender, EventArgs e)
+		{
+            editForm.Visible = false;
+		}
+
+		protected void btnSaveList_Click(object sender, EventArgs e)
+		{
+            int taskId = int.Parse(lblTaskId.Text);
+            SaveCategoryById(taskId);
+            editForm.Visible = false;
+        }
+
+        private void SaveCategoryById(int taskId)
+		{
+            int status = 0;
+
+			if (cbDone.Checked)
+			{
+				status = 1;
+			}
+			else
+			{
+				status = 0;
+			}
+
+            string d = CalendarEdit.SelectedDate.ToShortDateString();
+
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = WebConfigurationManager.ConnectionStrings["LifePlanerConnectionString"].ConnectionString;
+
+                // 2. Create a SqlCommand object
+                SqlCommand cmd = new SqlCommand();
+                ///TODO
+                /// we need to change the following statement to avoid
+                /// sql injection attacks
+                cmd.CommandText = "UPDATE Task SET Title='" + txtTitleEdit.Text + "', Status='"+status+ "', DueDate='"+d+ "'WHERE TaskId = " + taskId;
+                cmd.Connection = conn;
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+
+                BindTask();
+
+
+            }
+        }
+
+		protected void back_Click(object sender, EventArgs e)
+		{
+            Response.Redirect("~/Tasks.aspx");
+        }
+	}
 }
