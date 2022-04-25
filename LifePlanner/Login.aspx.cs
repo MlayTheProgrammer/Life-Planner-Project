@@ -24,13 +24,13 @@ namespace LifePlanner
                 string username = txtUsername.Text.Trim();
                 string password = txtPassword.Text.Trim();
 
-#pragma warning disable CS0618
                 string hashedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "SHA1");
-#pragma warning restore CS0618
 
                 if (VerifyLogin(username, hashedPassword))
                 {
-                    Response.Redirect("Task.aspx");
+                    Session["username"] = username;
+                    Session["password"] = hashedPassword;
+                    Response.Redirect("Tasks.aspx");
                 }
                 else
                 {
@@ -46,7 +46,6 @@ namespace LifePlanner
             {
                 conn.ConnectionString = WebConfigurationManager.ConnectionStrings["LifePlanerConnectionString"].ConnectionString;
 
-                // 2. Create a SqlCommand object
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.CommandText = "SELECT * FROM Users WHERE Username=@username AND Password=@password";

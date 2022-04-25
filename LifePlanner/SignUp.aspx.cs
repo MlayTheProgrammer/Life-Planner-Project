@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using System.Data;
+using System.Web.Security;
 
 namespace LifePlanner
 {
@@ -25,6 +26,8 @@ namespace LifePlanner
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = WebConfigurationManager.ConnectionStrings["LifePlanerConnectionString"].ConnectionString;
 
+                string hashedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPassword.Text, "SHA1");
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = "INSERT INTO Users(Firstname,LastName,PhoneNumber,Email,Username,Password) " +
                     "Values(@FirstName, @LastName, @PhoneNumber, @Email, @Username, @Password)";
@@ -34,7 +37,7 @@ namespace LifePlanner
                 cmd.Parameters.AddWithValue("@PhoneNumber", txtPhone.Text);
                 cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                cmd.Parameters.AddWithValue("@Password", hashedPassword);
                 
                 cmd.Connection = conn;
                 SqlDataAdapter sda = new SqlDataAdapter();
