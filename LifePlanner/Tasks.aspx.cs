@@ -170,17 +170,15 @@ namespace LifePlanner
                 txtTitleEdit.Text = sdr["Title"].ToString();
             }
 
-            //btnAddCategory.Visible = false;
-            //btnSaveCategory.Visible = true;
-            //btnCancel.Visible = true;
-            //pnlCategoryList.Visible = false;
+        
         }
 
 		protected void btnSaveList_Click(object sender, EventArgs e)
 		{
+   
             int listId = int.Parse(lblListId.Text);
-
             SaveCategoryById(listId);
+            editForm.Visible = false;
         }
 
         private void SaveCategoryById(int listId)
@@ -211,5 +209,24 @@ namespace LifePlanner
 
         }
 
-    }
+		protected void cancelAddTask(object sender, EventArgs e)
+		{
+            editForm.Visible = false;
+		}
+
+        protected void EditList(object sender, EventArgs e)
+        {
+            editForm.Visible = true;
+        }
+
+		protected void get_dashboard(object sender, EventArgs e)
+		{
+            Response.Redirect("~/Dashboard.aspx");
+        }
+
+		protected void get_task(object sender, EventArgs e)
+		{
+            Response.Redirect("~/Tasks.aspx");
+        }
+	}
 }
