@@ -23,13 +23,13 @@
                               <a class="nav-link" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                              <a class="nav-link active" aria-current="page" href="SignUp.aspx">Sign Up</a>
                             </li>
                               <li class="nav-item">
-                              <a class="nav-link" href="#">Login</a>
+                              <a class="nav-link" href="Login.aspx">Login</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Contact</a>
+                              <a class="nav-link" href="ContactUs.aspx">Contact</a>
                             </li>
                              <%-- <ul class="nav navbar-nav navbar-right">
                                  <li><a href="#"><img src="images/LifePlanner.png" class="img-responsive"/>Right</a></li>

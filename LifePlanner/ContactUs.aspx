@@ -26,7 +26,7 @@
                               <a class="nav-link active" aria-current="page" href="SignUp.aspx">Sign Up</a>
                             </li>
                               <li class="nav-item">
-                              <a class="nav-link" href="#">Login</a>
+                              <a class="nav-link" href="Login.aspx">Login</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="ContactUs.aspx">Contact</a>
@@ -59,15 +59,15 @@
             </div>
             <div class="col-6" style="margin-top: 50px">
                 <form id="form1" runat="server">
-                    <div><asp:TextBox ID="txtFirstName" runat="server" Width="50%">First Name</asp:TextBox></div>
+                    <div><asp:TextBox ID="txtFirstName" runat="server" Width="50%" placeholder="First Name"></asp:TextBox></div>
                     <br />
-                    <div><asp:TextBox ID="txtLastName" runat="server" Width="50%">Last Name</asp:TextBox></div>
+                    <div><asp:TextBox ID="txtLastName" runat="server" Width="50%" placeholder="Last Name"></asp:TextBox></div>
                     <br />
-                    <div><asp:TextBox ID="txtEmail" runat="server" Width="50%">Email</asp:TextBox></div>
+                    <div><asp:TextBox ID="txtEmail" runat="server" Width="50%" placeholder="Email"></asp:TextBox></div>
                     <br />
-                    <div><asp:TextBox ID="txtMessage" runat="server" Width="50%" Height="200px">Message</asp:TextBox></div>
+                    <div><asp:TextBox ID="txtMessage" runat="server" Width="50%" Height="200px" placeholder="Message"></asp:TextBox></div>
                     <br />
-                    <div><asp:Button ID="btn" runat="server" Text="Send Message" Width="50%"/></div>
+                    <div><asp:Button ID="btnSend" runat="server" Text="Send Message" Width="50%" OnClick="btnSend_Click"/></div>
                     <br />
                 </form>
             </div>

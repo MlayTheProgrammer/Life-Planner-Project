@@ -20,13 +20,13 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                               <li class="nav-item">
-                              <a class="nav-link" href="Tasks.aspx">Home</a>
+                              <a class="nav-link" href="#">Home</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link active" aria-current="page" href="SignUp.aspx">Sign Up</a>
                             </li>
                               <li class="nav-item">
-                              <a class="nav-link" href="#">Login</a>
+                              <a class="nav-link" href="Login.aspx">Login</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="ContactUs.aspx">Contact</a>&nbsp;</li>
@@ -77,7 +77,7 @@
                 <!-- imput details -->
                 <form id="form1" runat="server">
                     <div id="eventTitle">
-                        <asp:TextBox ID="txtEventTitle" runat="server" width="100%">Add Title</asp:TextBox>
+                        <asp:TextBox ID="txtEventTitle" runat="server" width="100%" placeholder="Add Title"></asp:TextBox>
                     </div>
                     <br />
                     <div>
@@ -388,8 +388,8 @@
 
                     <br />
 
-                    <div>
-                        <asp:Label ID="lblEventDetails" runat="server" Text="Event Details"></asp:Label>
+                    <div style="font-size:larger">
+                        <p>Event Details</p>
                     </div>
 
                     <br />
@@ -410,7 +410,7 @@
                     <br />
 
                     <div>
-                        <asp:TextBox ID="txtLocation" runat="server" Width="50%">Add Location</asp:TextBox>
+                        <asp:TextBox ID="txtLocation" runat="server" Width="50%" placeholder="Add Location"></asp:TextBox>
                     </div>
 
                     <br />
@@ -419,7 +419,7 @@
                         <asp:Panel ID="pnlDescriptionAddOn" runat="server">
                             <!-- icons -->
                         </asp:Panel>
-                        <asp:TextBox ID="txtDescription" runat="server" width="50%" height="100px">Add Description</asp:TextBox>
+                        <asp:TextBox ID="txtDescription" runat="server" width="50%" height="100px" placeholder="Add Description"></asp:TextBox>
                     </div>
 
                     <br />
