@@ -43,7 +43,7 @@
             </div>
     </asp:Panel>
 
-    <div class="container" style="margin-top: 5px">
+    <div class="container" style="margin-top: 5px; margin-bottom:5px">
         <div class="row">
             <div class="col-sm-6">
                 <img src="https://images.unsplash.com/photo-1492724724894-7464c27d0ceb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGNhbnlvbnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Canyon Photo" height="100%" width="100%" />
@@ -58,29 +58,38 @@
                     <br />
 
                     <div>
-                        <input id="txtUsername" type="text" placeholder="Email or Username" style="width: 90%"/>
+                        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" ClientIDMode="Static" placeholder="Username" style="width:90%"></asp:TextBox>
+                        <!-- <input id="txtUsername" type="text" placeholder="Email or Username" style="width: 90%"/> -->
                     </div>
                     
                     <br />
 
                     <div>
-                        <input id="txtPassword" type="password" placeholder="Password" style="width: 90%"/>
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" ClientIDMode="Static" TextMode="Password" placeholder="Password" style="width:90%"></asp:TextBox>
+                        <!-- <input id="txtPassword" type="password" placeholder="Password" style="width: 90%"/> -->
                     </div>
 
                     <br />
 
                     <div>
-                        <input id="btnSubmit" type="submit" value="Submit" style="background-color:#276678; width: 60%"/>
+                        <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary" Text="Submit" style="background-color:#276678; width:90%" OnClick="btnLogin_Click" />
+                        
+                        <!-- <input id="btnSubmit" type="submit" value="Submit" style="background-color:#276678; width: 60%"/> -->
                     </div>
 
                     <br />
                     
-                    <div style="display: inline-flex; margin-bottom:150px">
+                    <div style="display: inline-flex">
                         <p>Not a member yet? &nbsp;</p>
                         <a href="SignUp.aspx">Sign Up</a>
                         <!--<asp:HyperLink ID="lnkSignUp" runat="server" href="SignUp.aspx">Sign Up</asp:HyperLink> -->
                     </div>
 
+                    <br />
+
+                    <div style="margin-bottom:150px">
+                        <asp:Label ID="lblLoginFailed" runat="server" CssClass="alert alert-danger" Visible="false"></asp:Label>
+                    </div>   
                 </form>
             </div>
 
