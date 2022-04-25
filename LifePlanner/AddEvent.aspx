@@ -8,40 +8,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 </head>
 <body>
+    <form id="form1" runat="server">
     <asp:Panel ID="pnlNavigation" runat="server" ClientIDMode="Static">
             <div class="container">
-               <div class="row">
+                <div class="row">
                     <nav class="navbar navbar-expand-lg navbar-light navbar-nav w-100" style="background-color:#276678;">
-                      <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Life Planner</a>
-                        <%--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>--%>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                              <li class="nav-item">
-                              <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="SignUp.aspx">Sign Up</a>
-                            </li>
-                              <li class="nav-item">
-                              <a class="nav-link" href="Login.aspx">Login</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="ContactUs.aspx">Contact</a>&nbsp;</li>
-                             <%-- <ul class="nav navbar-nav navbar-right">
-                                 <li><a href="#"><img src="images/LifePlanner.png" class="img-responsive"/>Right</a></li>
-                               </ul>--%>
-<%--<asp:Button ID="btnContact" runat="server" Text="Contact" /--%>
-                          </ul>
+                        <div class="container-fluid">
+
+                            <a class="navbar-brand" href="#">Life Planner&nbsp;</a>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <%-- <asp:LinkButton ID="btnHome" runat="server" href="Login.aspx" ForeColor="White">Home</asp:LinkButton>
+                                
+                                <asp:LinkButton ID="btnSignUp" runat="server" href="SignUp.aspx">Sign UP</asp:LinkButton>
+
+                                <asp:LinkButton ID="btnLoginPage" runat="server" href="Login.aspx">Login</asp:LinkButton>
+
+                                <asp:LinkButton ID="btnContact" runat="server" href="ContactUs.aspx">Contact</asp:LinkButton>
+
+                                <asp:LinkButton ID="btnAbout" runat="server" href="AboutUs.aspx">About us</asp:LinkButton>--%>
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item" style="margin:5px">
+                                        <asp:LinkButton ID="btnHome" runat="server" href="Login.aspx" ForeColor="White">Home</asp:LinkButton>
+                                    </li>
+                                    <li class="nav-item" style="margin:5px">
+                                        <asp:LinkButton ID="btnSignUp" runat="server" href="SignUp.aspx" ForeColor="White">Sign up</asp:LinkButton>
+                                    </li>
+                                    <li class="nav-item" style="margin:5px">
+                                        <asp:LinkButton ID="btnLoginPage" runat="server" href="Login.aspx" ForeColor="White">Login</asp:LinkButton>
+                                    </li>
+                                    <li class="nav-item" style="margin:5px">
+                                        <asp:LinkButton ID="btnContact" runat="server" href="ContactUs.aspx" ForeColor="White">Contact</asp:LinkButton>
+                                    </li>
+                                    <li class="nav-item" style="margin:5px">
+                                        <asp:LinkButton ID="btnAbout" runat="server" href="AboutUs.aspx" ForeColor="White">About us</asp:LinkButton>
+                                    </li>
+
+                                </ul>
+                            </div>
                         </div>
-                      </div>
                     </nav>
-                   <hr />  
-               </div>
+                    <hr />
+                </div>
             </div>
-    </asp:Panel>
+        </asp:Panel>
     <div class="container" style="background-color: #D3E0EA">
 
         <br />
@@ -75,7 +85,7 @@
 
             <div class="col-sm-6">
                 <!-- imput details -->
-                <form id="form1" runat="server">
+                
                     <div id="eventTitle">
                         <asp:TextBox ID="txtEventTitle" runat="server" width="100%" placeholder="Add Title"></asp:TextBox>
                     </div>
@@ -424,11 +434,11 @@
 
                     <br />
 
-                </form>
+                
             </div>
 
             <div class="col-sm-3" style="text-align:left">
-                <input id="btnSave" type="submit" value="Save" />
+                <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
             </div>
 
         </div>
@@ -439,6 +449,6 @@
             <p>&copy; <%: DateTime.Now.Year %>- Life Planner</p>
         </footer>
     </div>
-    
+    </form>
 </body>
 </html>
