@@ -15,31 +15,67 @@ namespace LifePlanner
 	{
 
 		/// <summary>
-		/// back control.
+		/// pnlNavigation control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button back;
+		protected global::System.Web.UI.WebControls.Panel pnlNavigation;
 
 		/// <summary>
-		/// btnAboutUs control.
+		/// btnDashboard control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnAboutUs;
+		protected global::System.Web.UI.WebControls.LinkButton btnDashboard;
 
 		/// <summary>
-		/// add control.
+		/// btnTasks control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button add;
+		protected global::System.Web.UI.WebControls.LinkButton btnTasks;
+
+		/// <summary>
+		/// btnEvents control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.LinkButton btnEvents;
+
+		/// <summary>
+		/// btnContact control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.LinkButton btnContact;
+
+		/// <summary>
+		/// btnAbout control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.LinkButton btnAbout;
+
+		/// <summary>
+		/// addEvent control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.LinkButton addEvent;
 
 		/// <summary>
 		/// myForm control.
