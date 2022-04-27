@@ -15,58 +15,22 @@ namespace LifePlanner
 	{
 
 		/// <summary>
-		/// pnlNavigation control.
+		/// dashboard control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel pnlNavigation;
+		protected global::System.Web.UI.WebControls.Button dashboard;
 
 		/// <summary>
-		/// btnDashboard control.
+		/// task control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton btnDashboard;
-
-		/// <summary>
-		/// btnTasks control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton btnTasks;
-
-		/// <summary>
-		/// btnEvents control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton btnEvents;
-
-		/// <summary>
-		/// btnContact control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton btnContact;
-
-		/// <summary>
-		/// btnAbout control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton btnAbout;
+		protected global::System.Web.UI.WebControls.Button task;
 
 		/// <summary>
 		/// gvDashboard control.

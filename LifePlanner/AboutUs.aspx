@@ -23,7 +23,7 @@
 
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: #1687A7;">Help&nbsp;<i class="fa fa-question" style="color: #1687A7; font-size: 25px;"></i></a></li>
+                    <%--<li class="nav-item"><a class="nav-link" href="#" style="color: #1687A7;">Help&nbsp;<i class="fa fa-question" style="color: #1687A7; font-size: 25px;"></i></a></li>--%>
                 </ul>
             </div>
         </div>
@@ -51,3 +51,4 @@
      </div>
 
 </html>
+
