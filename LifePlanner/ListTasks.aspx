@@ -16,53 +16,29 @@
 </head>
 <body>
          <form runat="server">
-       
-             <asp:Panel ID="pnlNavigation" runat="server" ClientIDMode="Static">
-            <div class="container">
-                <div class="row">
-                    <nav class="navbar navbar-expand-lg navbar-light navbar-nav w-100" style="background-color:#276678;">
-                        <div class="container-fluid">
-
-                            <a class="navbar-brand" href="#">Life Planner&nbsp;</a>
-
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item" style="margin:5px">
-                                         <i class="fa fa-home" style="color: #1687A7;"></i>
-                                        <asp:LinkButton ID="btnDashboard" runat="server" href="Dashboard.aspx" ForeColor="White" Font-Underline="false">Dashbaord</asp:LinkButton>
-                                    </li>
-                                    <li class="nav-item" style="margin:5px">
-                                        <i class="fas fa-tasks" style="color: #1687A7;"></i>
-                                        <asp:LinkButton ID="btnTasks" runat="server" href="Tasks.aspx" ForeColor="White">Task Lists</asp:LinkButton>
-                                    </li>
-                                    <li class="nav-item" style="margin:5px">
-  
-                                        <i class="fas fa-calendar-alt" style="color: #1687A7;"></i>
-                                        <asp:LinkButton ID="btnEvents" runat="server" href="Events.aspx" ForeColor="White" Font-Underline="false">Events</asp:LinkButton>
-                                    </li>
-                                    <li class="nav-item" style="margin:5px">
-                                        <asp:LinkButton ID="btnContact" runat="server" href="ContactUs.aspx" ForeColor="White" Font-Underline="false">Contact</asp:LinkButton>
-                                    </li>
-                                    <li class="nav-item" style="margin:5px">
-                                        <asp:LinkButton ID="btnAbout" runat="server" href="AboutUs.aspx" ForeColor="White" Font-Underline="false">About us</asp:LinkButton>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                    <hr />
-                </div>
+             <%--     <form id="form1" runat="server">--%>
+     <nav class="navbar navbar-light navbar-expand-md border rounded" style="background: #D3E0EA;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Life Planner&nbsp;</a>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+          
+           <%-- <button onclick="history.back()" class="btn btn-primary border rounded" type="button" style="background: #1687A7; text-align: right;"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>&nbsp;Back</button>--%>
+            <i class="fa fa-arrow-circle-left" aria-hidden="true" style="color: #276678"></i>
+            <asp:Button ID="back" runat="server" OnClick="back_Click" Text="Back" BackColor="#0099CC" CssClass="btn btn-primary border rounded" />
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"></li>
+                    <li><a class="nav-link" href="#" style="color: #1687A7;"><i class="fa fa-question" style="color: #1687A7; font-size: 25px;">
+                        <asp:LinkButton ID="AboutUs" runat="server" OnClick="AboutUs_Click">About Us</asp:LinkButton>
+                        </i></a></li>
+                </ul>
             </div>
-        </asp:Panel>
+        </div>
+    </nav>
          <%--<button  class="btn btn-primary" type="button" style="background: transparent; color: rgb(0,0,0);" onclick="openForm()">
                                 <i class="fas fa-plus-square" style="color: #276678;"></i>
                                 Add Task ...</button>--%>
-             <div class="container">
-                  <asp:LinkButton ID="addEvent" runat="server" Font-Underline="false" ForeColor="#276678" OnClick="AddTaskList">Add Task ...
-                              <i class="fas fa-plus-square" style="color: #276678;"></i>
-                         </asp:LinkButton>
-              <%--<asp:Button ID="add" runat="server" Text="Add Task ..." BackColor="Transparent" BorderColor="Transparent" OnClick="AddTaskList"/>--%>
+              <asp:Button ID="add" runat="server" Text="Add Task ..." BackColor="Transparent" BorderColor="Transparent" OnClick="AddTaskList"/>
                             <div class="form-popup" id="myForm" runat="server" visible="false" >
                                 <h1>Add Task</h1>
                                 <asp:TextBox ID="txtTitle" runat="server" BackColor="Silver" Width="218px" placeholder="Enter Task Name"></asp:TextBox>
@@ -106,12 +82,9 @@
                                     </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
-                 </div>
-            <div>
-            <footer class="container" style="background-color: #F6F5F5">
-                <p>&copy; <%: DateTime.Now.Year %> - Life Planner</p>
+              <footer style="background: #D3E0EA;">
+                <p>&copy;  - My Life Planner Application</p>
             </footer>
-        </div>
              </form>
    
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
