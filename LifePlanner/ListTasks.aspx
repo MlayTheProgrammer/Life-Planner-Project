@@ -29,7 +29,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"></li>
                     <li><a class="nav-link" href="#" style="color: #1687A7;"><i class="fa fa-question" style="color: #1687A7; font-size: 25px;">
-                        <asp:LinkButton ID="AboutUs" runat="server" OnClick="AboutUs_Click">About Us</asp:LinkButton>
+                        <asp:LinkButton ID="AboutUs" runat="server" href ="AboutUs.aspx">About Us</asp:LinkButton>
                         </i></a></li>
                 </ul>
             </div>

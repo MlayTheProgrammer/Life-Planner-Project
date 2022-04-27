@@ -31,7 +31,7 @@
                             <li class="nav-item">
                               <a class="nav-link" href="ContactUs.aspx">Contact</a>
                             </li>
-                              <asp:LinkButton ID="AboutUs" runat="server" OnClick="AboutUs_Click">About Us</asp:LinkButton>
+                              <asp:LinkButton ID="AboutUs" runat="server" href ="AboutUs.aspx">About Us</asp:LinkButton>
                             <p>
                                 &nbsp;</p>
 

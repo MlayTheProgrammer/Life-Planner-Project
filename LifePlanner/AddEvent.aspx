@@ -41,7 +41,7 @@
                                         <asp:LinkButton ID="btnContact" runat="server" href="ContactUs.aspx" ForeColor="White">Contact</asp:LinkButton>
                                     </li>
                                     <li class="nav-item" style="margin:5px">
-                                        <asp:LinkButton ID="AboutUs" runat="server" OnClick="AboutUs_Click">About Us</asp:LinkButton>
+                                        <asp:LinkButton ID="AboutUs" runat="server" href="AboutUs.aspx">About Us</asp:LinkButton>
                                     </li>
 
                                 </ul>

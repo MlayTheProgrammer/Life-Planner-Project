@@ -26,7 +26,7 @@
                 </button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
-                    <asp:LinkButton ID="AboutUs" runat="server" OnClick="AboutUs_Click">About Us</asp:LinkButton>
+                    <asp:LinkButton ID="AboutUs" runat="server" href ="AboutUs.aspxx">About Us</asp:LinkButton>
                 </ul>
             </div>
         </div>
