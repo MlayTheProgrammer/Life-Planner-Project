@@ -55,7 +55,7 @@
                 </div>
             </div>
         </asp:Panel>
-    <div style="margin: 5px;">
+<%--    <div style="margin: 5px;">--%>
     
         <div class="container">
             <div class="row">
@@ -75,7 +75,7 @@
                             </asp:GridView>
             </div>
         </div>
-    </div>
+<%--    </div>--%>
          <div>
             <footer class="container" style="background-color: #F6F5F5">
                 <p>&copy; <%: DateTime.Now.Year %> - Life Planner</p>
