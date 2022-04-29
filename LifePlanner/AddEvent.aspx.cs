@@ -50,14 +50,9 @@ namespace LifePlanner
 
                     cmd.ExecuteNonQuery();
 
-                    Response.Redirect("~/Tasks.aspx");
+                    Response.Redirect("~/Events.aspx");
                 }
             }
-        }
-
-        internal void Show()
-        {
-            throw new NotImplementedException();
         }
 
         protected System.DateTime getStartDate()
