@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:Panel ID="pnlNavigation" runat="server" ClientIDMode="Static">
+          <asp:Panel ID="pnlNavigation" runat="server" ClientIDMode="Static">
             <div class="container">
                 <div class="row">
                     <nav class="navbar navbar-expand-lg navbar-light navbar-nav w-100" style="background-color:#276678;">
@@ -18,32 +18,26 @@
                             <a class="navbar-brand" href="#">Life Planner&nbsp;</a>
 
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <%-- <asp:LinkButton ID="btnHome" runat="server" href="Login.aspx" ForeColor="White">Home</asp:LinkButton>
-                                
-                                <asp:LinkButton ID="btnSignUp" runat="server" href="SignUp.aspx">Sign UP</asp:LinkButton>
-
-                                <asp:LinkButton ID="btnLoginPage" runat="server" href="Login.aspx">Login</asp:LinkButton>
-
-                                <asp:LinkButton ID="btnContact" runat="server" href="ContactUs.aspx">Contact</asp:LinkButton>
-
-                                <asp:LinkButton ID="btnAbout" runat="server" href="AboutUs.aspx">About us</asp:LinkButton>--%>
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item" style="margin:5px">
-                                        <asp:LinkButton ID="btnHome" runat="server" href="Login.aspx" ForeColor="White">Home</asp:LinkButton>
+                                         <i class="fa fa-home" style="color: #1687A7;"></i>
+                                        <asp:LinkButton ID="btnDashboard" runat="server" href="Dashboard.aspx" Font-Underline="false" ForeColor="White">Dashbaord</asp:LinkButton>
                                     </li>
                                     <li class="nav-item" style="margin:5px">
-                                        <asp:LinkButton ID="btnSignUp" runat="server" href="SignUp.aspx" ForeColor="White">Sign up</asp:LinkButton>
+                                        <i class="fas fa-tasks" style="color: #1687A7;"></i>
+                                        <asp:LinkButton ID="btnTasks" runat="server" href="Tasks.aspx" ForeColor="White" Font-Underline="false">Task Lists</asp:LinkButton>
                                     </li>
                                     <li class="nav-item" style="margin:5px">
-                                        <asp:LinkButton ID="btnLoginPage" runat="server" href="Login.aspx" ForeColor="White">Login</asp:LinkButton>
+  
+                                        <i class="fas fa-calendar-alt" style="color: #1687A7;"></i>
+                                        <asp:LinkButton ID="btnEvents" runat="server" href="Events.aspx" ForeColor="White">Events</asp:LinkButton>
                                     </li>
                                     <li class="nav-item" style="margin:5px">
-                                        <asp:LinkButton ID="btnContact" runat="server" href="ContactUs.aspx" ForeColor="White">Contact</asp:LinkButton>
+                                        <asp:LinkButton ID="btnContact" runat="server" href="ContactUs.aspx" ForeColor="White" Font-Underline="false">Contact</asp:LinkButton>
                                     </li>
                                     <li class="nav-item" style="margin:5px">
-                                        <asp:LinkButton ID="AboutUs" runat="server" href="AboutUs.aspx">About Us</asp:LinkButton>
+                                        <asp:LinkButton ID="btnAbout" runat="server" href="AboutUs.aspx" ForeColor="White" Font-Underline="false">About us</asp:LinkButton>
                                     </li>
-
                                 </ul>
                             </div>
                         </div>
@@ -59,14 +53,9 @@
         <div class="row">
             <div class="col-sm-3" style="text-align:right">
                 <!-- cancel button, notification, location, and more icons -->
-                <input id="btnCancel" type="reset" value="Cancel" />
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancle_Click" />
 
                 <br /><br /><br /><br /><br /><br />
-
-                <div>
-                    <!-- notification icon -->
-                    <img alt="Notification" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/notification-circle-blue-1024.png" height="25" width="25"/>
-                </div>
 
                 <br />
 
@@ -88,26 +77,27 @@
                 
                     <div id="eventTitle">
                         <asp:TextBox ID="txtEventTitle" runat="server" width="100%" placeholder="Add Title"></asp:TextBox>
+                        <asp:Label ID="lblEventId" runat="server" Visible="false"></asp:Label>
                     </div>
                     <br />
                     <div>
-                        <select id="sltStartMonth">
-                            <option>Month</option>
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
+                        <select id="sltStartMonth" runat="server">
+                            <option value="0">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
                         </select>
 
-                        <select id="sltStartDay">
+                        <select id="sltStartDay" runat="server">
                             <option>Day</option>
                             <option>1</option>
                             <option>2</option>
@@ -142,7 +132,7 @@
                             <option>31</option>
                         </select>
 
-                        <select id="sltStartTime">
+                        <select id="sltStartTime" runat="server">
                             <option>Time</option>
                             <option>0:00</option>
                             <option>0:15</option>
@@ -244,23 +234,23 @@
                     
                         <asp:Label ID="lblTo" runat="server" Text="to"></asp:Label>
 
-                        <select id="sltEndMonth">
-                            <option>Month</option>
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
+                        <select id="sltEndMonth" runat="server">
+                            <option value="0">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
                         </select>
                     
-                        <select id="sltEndDay">
+                        <select id="sltEndDay" runat="server">
                             <option>Day</option>
                             <option>1</option>
                             <option>2</option>
@@ -295,7 +285,7 @@
                             <option>31</option>
                         </select>
 
-                        <select id="sltEndTime">
+                        <select id="sltEndTime" runat="server">
                             <option>Time</option>
                             <option>0:00</option>
                             <option>0:15</option>
@@ -400,21 +390,6 @@
 
                     <div style="font-size:larger">
                         <p>Event Details</p>
-                    </div>
-
-                    <br />
-
-                    <div style="display:block;" width="50%">
-                        <asp:Label ID="lblAddNotification" runat="server" Text="Add Notification"></asp:Label>
-
-                        <asp:TextBox ID="txtNotificationTime" runat="server" Width="40px">30</asp:TextBox>
-
-                        <select id="sltMHDW">
-                            <option>minutes</option>
-                            <option>hours</option>
-                            <option>days</option>
-                            <option>weeks</option>
-                        </select>
                     </div>
 
                     <br />

@@ -12,8 +12,17 @@ namespace LifePlanner
 {
 	public partial class Events : System.Web.UI.Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
+        public int userId;
+        public int IdToAddEvent()
+        {
+            return userId;
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
 		{
+            var fromTasks = new Tasks();
+            userId = fromTasks.IdToEvents();
+
             if (!Page.IsPostBack)
             {
                 BindEvents();

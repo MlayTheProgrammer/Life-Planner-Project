@@ -12,8 +12,18 @@ namespace LifePlanner
 {
 	public partial class Tasks : System.Web.UI.Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
+        public int userId;
+
+        public int IdToEvents()
+        {
+            return userId;
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
 		{
+            var fromLogin = new Login();
+            userId = fromLogin.IdToTasks();
+
             if (!Page.IsPostBack)
             {
                 BindTaskList();
@@ -46,6 +56,11 @@ namespace LifePlanner
                 conn.Close();
                 BindTaskList();
             }
+        }
+
+        internal void Show()
+        {
+            throw new NotImplementedException();
         }
 
         protected void BindTaskList()

@@ -33,31 +33,31 @@ namespace LifePlanner
         protected global::System.Web.UI.WebControls.Panel pnlNavigation;
 
         /// <summary>
-        /// btnHome control.
+        /// btnDashboard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnHome;
+        protected global::System.Web.UI.WebControls.LinkButton btnDashboard;
 
         /// <summary>
-        /// btnSignUp control.
+        /// btnTasks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnSignUp;
+        protected global::System.Web.UI.WebControls.LinkButton btnTasks;
 
         /// <summary>
-        /// btnLoginPage control.
+        /// btnEvents control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLoginPage;
+        protected global::System.Web.UI.WebControls.LinkButton btnEvents;
 
         /// <summary>
         /// btnContact control.
@@ -69,13 +69,22 @@ namespace LifePlanner
         protected global::System.Web.UI.WebControls.LinkButton btnContact;
 
         /// <summary>
-        /// AboutUs control.
+        /// btnAbout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AboutUs;
+        protected global::System.Web.UI.WebControls.LinkButton btnAbout;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
 
         /// <summary>
         /// txtEventTitle control.
@@ -87,6 +96,42 @@ namespace LifePlanner
         protected global::System.Web.UI.WebControls.TextBox txtEventTitle;
 
         /// <summary>
+        /// lblEventId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEventId;
+
+        /// <summary>
+        /// sltStartMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect sltStartMonth;
+
+        /// <summary>
+        /// sltStartDay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect sltStartDay;
+
+        /// <summary>
+        /// sltStartTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect sltStartTime;
+
+        /// <summary>
         /// lblTo control.
         /// </summary>
         /// <remarks>
@@ -96,22 +141,31 @@ namespace LifePlanner
         protected global::System.Web.UI.WebControls.Label lblTo;
 
         /// <summary>
-        /// lblAddNotification control.
+        /// sltEndMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAddNotification;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect sltEndMonth;
 
         /// <summary>
-        /// txtNotificationTime control.
+        /// sltEndDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNotificationTime;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect sltEndDay;
+
+        /// <summary>
+        /// sltEndTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect sltEndTime;
 
         /// <summary>
         /// txtLocation control.
